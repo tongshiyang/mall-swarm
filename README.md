@@ -12,15 +12,15 @@
 
 ## 友情提示
 
-> 1. **快速体验项目**：[在线访问地址](https://www.macrozheng.com/admin/index.html) 。
-> 2. **全套学习教程**：[《mall学习教程》](https://www.macrozheng.com) 。
-> 3. **视频教程（2023最新版）**：[《mall视频教程》](https://www.macrozheng.com/mall/catalog/mall_video.html) 。
+> 1. **快速体验项目**：[在线访问地址](https://cloud.macrozheng.com/admin/index.html) 。
+> 2. **全套学习教程**：[《mall-swarm微服务学习教程》](https://cloud.macrozheng.com) 。
+> 3. **视频教程（2024最新版）**：[《mall-swarm视频教程》](https://cloud.macrozheng.com/video/) 。
 > 4. **Spring Cloud全套教程**：[《SpringCloud学习教程》](https://github.com/macrozheng/springcloud-learning) 。
-> 5. **项目交流**：想要加群交流项目的朋友，可以加入[mall项目交流群](#公众号) 。
+> 5. **分支说明**：`master`分支基于Spring Cloud 2023+Spring Boot 3.2，`dev-v2`分支基于Spring Cloud 2021+Spring Boot 2.7。
 
 ## 项目简介
 
-`mall-swarm`是一套微服务商城系统，采用了 Spring Cloud 2021 & Alibaba、Spring Boot 2.7、Oauth2、MyBatis、Elasticsearch、Docker、Kubernetes等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。文档齐全，附带全套Spring Cloud教程。
+`mall-swarm`是一套微服务商城系统，采用了 Spring Cloud 2023 & Alibaba、Spring Boot 3.2、Sa-Token、MyBatis、Elasticsearch、Docker、Kubernetes等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。文档齐全，附带全套Spring Cloud教程。
 
 ## 项目演示
 
@@ -75,7 +75,7 @@ mall
 | Spring Cloud           | 微服务框架           | https://spring.io/projects/spring-cloud              |
 | Spring Cloud Alibaba   | 微服务框架           | https://github.com/alibaba/spring-cloud-alibaba      |
 | Spring Boot            | 容器+MVC框架         | https://spring.io/projects/spring-boot               |
-| Spring Security Oauth2 | 认证和授权框架       | https://spring.io/projects/spring-security-oauth     |
+| Sa-Token               | 认证和授权框架       | https://github.com/dromara/Sa-Token                   |
 | MyBatis                | ORM框架              | http://www.mybatis.org/mybatis-3/zh/index.html       |
 | MyBatisGenerator       | 数据层代码生成       | http://www.mybatis.org/generator/index.html          |
 | PageHelper             | MyBatis物理分页插件  | http://git.oschina.net/free/Mybatis_PageHelper       |
@@ -88,7 +88,6 @@ mall
 | Druid                  | 数据库连接池         | https://github.com/alibaba/druid                     |
 | OSS                    | 对象存储             | https://github.com/aliyun/aliyun-oss-java-sdk        |
 | MinIO                  | 对象存储             | https://github.com/minio/minio                       |
-| JWT                    | JWT登录支持          | https://github.com/jwtk/jjwt                         |
 | LogStash               | 日志收集             | https://github.com/logstash/logstash-logback-encoder |
 | Lombok                 | 简化对象封装工具     | https://github.com/rzwitserloot/lombok               |
 | Seata                  | 全局事务管理框架     | https://github.com/seata/seata                       |
@@ -123,7 +122,7 @@ mall
 
 | 工具          | 版本号 | 下载                                                         |
 | ------------- | ------ | ------------------------------------------------------------ |
-| JDK           | 1.8    | https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html |
+| JDK           | 17     | https://www.oracle.com/cn/java/technologies/downloads/#java17 |
 | Mysql         | 5.7    | https://www.mysql.com/                                       |
 | Redis         | 7.0    | https://redis.io/download                                    |
 | Elasticsearch | 7.17.3 | https://www.elastic.co/cn/downloads/elasticsearch            |
@@ -135,50 +134,34 @@ mall
 
 ### 搭建步骤
 
-> Windows环境部署
-
-- Windows环境搭建请参考：[mall-swarm在Windows环境下的部署](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_windows.html);
-- `mall-admin-web`项目的安装及部署请参考：[mall前端项目的安装与部署](https://www.macrozheng.com/mall/deploy/mall_deploy_web.html);
-- `ELK`日志收集系统的搭建请参考：[SpringBoot应用整合ELK实现日志收集](https://www.macrozheng.com/mall/reference/mall_tiny_elk.html);
-- 使用MinIO存储文件请参考：[前后端分离项目，如何优雅实现文件存储](https://www.macrozheng.com/mall/technology/minio_use.html);
-- 读写分离解决方案请参考：[你还在代码里做读写分离么，试试这个中间件吧](https://www.macrozheng.com/project/gaea.html);
-- `分布式事务`解决方案请参考：[使用Seata彻底解决Spring Cloud中的分布式事务问题！](https://www.macrozheng.com/cloud/seata.html) 。
-
-> Docker环境部署
-
-- 使用虚拟机安装CentOS7.6请参考：[虚拟机安装及使用Linux，看这一篇就够了](https://www.macrozheng.com/tool/linux_install.html);
-- Docker环境的安装请参考：[开发者必备Docker命令](https://www.macrozheng.com/mall/reference/linux_command.html);
-- 本项目Docker镜像构建请参考：[使用Maven插件为SpringBoot应用构建Docker镜像](https://www.macrozheng.com/mall/reference/docker_maven.html);
-- 本项目在Docker容器下的部署请参考：[mall-swarm在Linux环境下的部署（基于Docker容器）](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_windows.html);
-- 本项目使用Jenkins自动化部署请参考：[mall-swarm使用Jenkins实现自动化部署](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_jenkins.html) 。
-
-> Kubernetes环境部署
-
-- 本项目使用Kubernetes部署请参考：[mall-swarm微服务项目在K8S下的实践！](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_k8s.html)
+- Windows环境搭建请参考：[mall-swarm项目后端开发环境搭建](https://cloud.macrozheng.com/start/mall_swarm_deploy_windows.html);
+- `mall-admin-web`项目的安装及部署请参考：[mall-swarm前端开发环境搭建](https://cloud.macrozheng.com/start/mall_swarm_deploy_windows_web.html);
 
 ## 运行效果展示
 
 - 查看注册中心注册服务信息，访问地址：http://192.168.3.101:8848/nacos/
 
-![](./document/resource/mall_swarm_run_new_01.png)
+![](./document/resource/re_mall_swarm_run_01.png)
 
 - 监控中心应用信息，访问地址：http://192.168.3.101:8101
 
-![](./document/resource/mall_swarm_run_new_02.png)
+![](./document/resource/re_mall_swarm_run_02.png)
 
-![](./document/resource/mall_swarm_run_new_04.png)
+![](./document/resource/re_mall_swarm_run_03.png)
 
 - API文档信息，访问地址：http://192.168.3.101:8201
 
-![](./document/resource/mall_swarm_run_05.png)
+![](./document/resource/re_mall_swarm_run_04.png)
 
 - 日志收集系统信息，访问地址：http://192.168.3.101:5601
 
-![](./document/resource/mall_swarm_run_new_06.png)
+![](./document/resource/re_mall_swarm_run_05.png)
 
-- 可视化容器管理，访问地址：http://192.168.3.101:9000
+- 使用Kubernetes部署后项目运行状态，访问地址：http://192.168.3.101:30880
 
-![](./document/resource/mall_swarm_run_new_08.png)
+![](document/resource/re_mall_swarm_run_06.png)
+
+![](document/resource/re_mall_swarm_run_07.png)
 
 ## 公众号
 
@@ -190,4 +173,4 @@ mall
 
 [Apache License 2.0](https://github.com/macrozheng/mall-swarm/blob/master/LICENSE)
 
-Copyright (c) 2018-2024 macrozheng
+Copyright (c) 2018-2025 macrozheng
